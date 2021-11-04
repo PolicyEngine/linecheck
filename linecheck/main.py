@@ -16,9 +16,7 @@ def file_is_valid(
         with open(path, "r") as f:
             lines = f.readlines()
         if len(lines) == 0:
-            if verbose:
-                print(f"Skipping {path} (0 readable lines)")
-            return True
+            lines = [""]
         if lines[-1].endswith("\n"):
             return True
         else:
