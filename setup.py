@@ -14,9 +14,7 @@ setup(
         "argparse",
     ],
     entry_points={
-        "console_scripts": [
-            "linecheck=linecheck:cli"
-        ],
+        "console_scripts": ["linecheck=linecheck:cli"],
     },
     packages=find_packages(),
 )
