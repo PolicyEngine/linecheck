@@ -14,7 +14,12 @@ def file_is_valid(
         map(lambda fragment: fragment in str(path.absolute()), match)
     ):
         with open(path, "r") as f:
-            lines = f.readlines()
+            try:
+                lines = f.readlines()
+            except:
+                if verbose:
+                    print(f"Skipping {path} (couldn't read lines)")
+                return True
         if len(lines) == 0:
             lines = [""]
         if lines[-1].endswith("\n"):
