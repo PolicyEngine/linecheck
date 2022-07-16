@@ -13,6 +13,12 @@ setup(
         "pathlib",
         "argparse",
     ],
+    extras_require={
+        "dev": [
+            "setuptools",
+            "wheel",
+        ],
+    },
     entry_points={
         "console_scripts": ["linecheck=linecheck:cli"],
     },
