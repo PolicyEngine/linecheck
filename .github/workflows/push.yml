@@ -1,7 +1,7 @@
 name: Push
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 jobs:
   Lint:
     runs-on: ubuntu-latest
