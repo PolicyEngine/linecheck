@@ -14,6 +14,12 @@ jobs:
   Publish:
     if: github.repository == 'policyengine/linecheck'
     runs-on: ubuntu-latest
+    # PyPI trusted publishing: uploads accepted only from this workflow in the
+    # pypi environment (limited to master). No stored token.
+    environment: pypi
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - name: Checkout repo
         uses: actions/checkout@v6
@@ -26,6 +32,4 @@ jobs:
       - name: Publish a Python distribution to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
-          user: __token__
-          password: ${{ secrets.PYPI }}
           skip_existing: true

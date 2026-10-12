@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="linecheck",
-    version="0.1.0",
+    version="0.1.1",
     author="Nikhil Woodruff",
     author_email="nikhil@policyengine.org",
     description="Utility to check line endings.",
